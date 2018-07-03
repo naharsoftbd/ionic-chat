@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class HttpProvider {
 
-  url: string = './assets/mocks/';
+  url: string = 'http://ideb.nsbd.net/public/api/';
 
   constructor(public http: HttpClient) {
     console.log('Hello HttpProvider Provider');

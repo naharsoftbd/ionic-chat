@@ -21,11 +21,12 @@ export class LoginPage {
   // If you're using the username field with or without email, make
   // sure to add it to the type
   account = {
-    username: 'yajuve',
-    fullname: 'Mohamed Raouf',
-    email: 'yajuve.25.dz@gmail.com',
+    username: 'jafar',
+    fullname: 'Abu Jafar Md. Salah',
+    email: 'abusalah01diu@gmail.com',
     password: 'demodemo'
   };
+  userInfo = {"email":"", "password":""};
 
   // Our translated text strings
   private loginErrorString: string;
@@ -41,7 +42,7 @@ export class LoginPage {
 
   // Attempt to login in through our User service
   doLogin() {
-    this.http.get('my-profile.json').subscribe((profile) => {
+    this.http.get('http://ideb.nsbd.net/public/api/auth/login').subscribe((profile) => {
       this.userProvider.user = <User>profile;
       this.navCtrl.setRoot('ListFriendsPage');
     }, (err) => {

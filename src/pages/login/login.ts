@@ -42,7 +42,7 @@ export class LoginPage {
 
   // Attempt to login in through our User service
   doLogin() {
-    this.http.get('auth/login').subscribe((profile) => {
+    this.http.post('auth/login').subscribe((profile) => {
       this.userProvider.user = <User>profile;
       this.navCtrl.setRoot('ListFriendsPage');
     }, (err) => {
